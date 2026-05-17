@@ -21,14 +21,15 @@ public class Article implements Searchable {
         return title;
     }
 
-    @Override @JsonIgnore
+    @Override
+    @JsonIgnore
     public String searchTerm() {
         return toString();
     }
 
 
-
-    @Override @JsonIgnore
+    @Override
+    @JsonIgnore
     public String searchContent() {
         return "ARTICLE";
     }

@@ -15,8 +15,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class StorageService {
-    private final Map <UUID, Product> productsStorage;
-    private final Map <UUID, Article> articlesStorage;
+    private final Map<UUID, Product> productsStorage;
+    private final Map<UUID, Article> articlesStorage;
+
     public StorageService() {
         this.productsStorage = addProduct();
         this.articlesStorage = addArticle();
@@ -25,6 +26,7 @@ public class StorageService {
     public Map<UUID, Product> getProductsStorage() {
         return productsStorage;
     }
+
     public Map<UUID, Article> getArticlesStorage() {
         return articlesStorage;
 
@@ -49,10 +51,11 @@ public class StorageService {
 
         return products;
     }
+
     private HashMap<UUID, Article> addArticle() {
         HashMap<UUID, Article> articles = new HashMap<>();
 
-        Article article1 = new  Article("Про уродов и Людей", "Статья про фильм Балабанова");
+        Article article1 = new Article("Про уродов и Людей", "Статья про фильм Балабанова");
         Article article2 = new Article("Я Название статьи 2", "Текст второй статьи");
         Article article3 = new Article("В Название статьи 3", "Текст текст текст статьи длиииинннный!!");
         Article article4 = new Article("В Название статьи 4", "Текст текст текст статьи длиииинннный!!");
@@ -69,7 +72,8 @@ public class StorageService {
 
         return articles;
     }
-    public Map<UUID, Searchable>  getAllSearchables() {
+
+    public Map<UUID, Searchable> getAllSearchables() {
         HashMap<UUID, Searchable> searchables = new HashMap<>();
         for (Map.Entry<UUID, Product> entry : productsStorage.entrySet()) {
             Product product = entry.getValue();

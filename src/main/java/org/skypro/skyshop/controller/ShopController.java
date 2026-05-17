@@ -16,6 +16,7 @@ import java.util.Collection;
 public class ShopController {
     private final SearchService searchService;
     private StorageService storageService;
+
     public ShopController(StorageService storageService, SearchService searchService) {
         this.storageService = storageService;
         this.searchService = searchService;
@@ -30,6 +31,7 @@ public class ShopController {
     public Collection<Article> getAllArticles() {
         return storageService.getArticlesStorage().values();
     }
+
     @GetMapping("/search")
     public Collection<SearchResult> getAllSearchResults(@RequestParam String pattern) {
         return searchService.search(pattern);

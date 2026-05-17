@@ -13,15 +13,16 @@ public class SearchResult {
         this.conentType = conentType;
     }
 
-    public static SearchResult fromSearcheble (Searchable search){
-        SearchResult result = new SearchResult(search.searchTerm(),search.getId().toString(), search.searchContent());
+    public static SearchResult fromSearcheble(Searchable search) {
+        SearchResult result = new SearchResult(search.searchTerm(), search.getId().toString(), search.searchContent());
         return result;
 
     }
 
-    public UUID getId(){
+    public UUID getId() {
         return UUID.fromString(id);
     }
+
     public String getName() {
         return name;
 
@@ -30,8 +31,9 @@ public class SearchResult {
     public String getConentType() {
         return conentType;
     }
+
     @Override
     public String toString() {
-        return "ID:  " + id + " имя: " + name +  " тип контента: " + conentType;
+        return "ID:  " + id + " имя: " + name + " тип контента: " + conentType;
     }
 }

@@ -4,11 +4,13 @@ import java.util.UUID;
 
 public class FixPriceProduct extends Product {
     private static final short FIX_PRICE = 500;
+
     public FixPriceProduct(String name) {
         super(name);
         this.id = UUID.randomUUID();
 
     }
+
     @Override
     public int getPrice() {
         return FIX_PRICE;
@@ -16,7 +18,7 @@ public class FixPriceProduct extends Product {
 
     @Override
     public String toString() {
-        return name + " :" +  "Фиксированная цена " + FIX_PRICE  ;
+        return name + " :" + "Фиксированная цена " + FIX_PRICE;
     }
 
     @Override
