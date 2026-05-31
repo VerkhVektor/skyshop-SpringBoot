@@ -10,7 +10,7 @@ public abstract class Product implements Searchable {
     protected UUID id;
     //private final int cost;
 
-    public Product(String name) {
+    protected Product(String name) {
         this.name = name;
         this.id = UUID.randomUUID();
         //Название продукта не может быть пустой строкой или null. При этом пустая строка может быть также строкой,
@@ -19,6 +19,7 @@ public abstract class Product implements Searchable {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Имя не может быть пустым!");
         }
+        //this.cost = cost;
 
 
     }
