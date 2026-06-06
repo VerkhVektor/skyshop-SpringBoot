@@ -1,5 +1,6 @@
 package org.skypro.skyshop.service;
 
+import org.skypro.skyshop.exeptions.NoSuchProductException;
 import org.skypro.skyshop.model.article.Article;
 import org.skypro.skyshop.model.product.DiscountedProduct;
 import org.skypro.skyshop.model.product.FixPriceProduct;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -85,6 +87,13 @@ public class StorageService {
         }
 
         return searchables;
+    }
+
+    public Optional<Product> getProductById(UUID id) {
+        if  (productsStorage.containsKey(id)) {
+            return Optional.of(productsStorage.get(id));
+        }
+        throw new NoSuchProductException("Такого продукта нет!");
     }
 
 

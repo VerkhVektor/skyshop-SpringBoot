@@ -37,3 +37,4 @@ public class SearchResult {
         return "ID:  " + id + " имя: " + name + " тип контента: " + conentType;
     }
 }
+

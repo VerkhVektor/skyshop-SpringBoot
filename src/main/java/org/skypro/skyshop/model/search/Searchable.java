@@ -16,8 +16,7 @@ public interface Searchable {
     }
 
     UUID getId();
-//
-//     boolean equals(Searchable obj);
+
 
 
 }
