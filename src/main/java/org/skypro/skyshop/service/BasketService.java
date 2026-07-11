@@ -37,6 +37,11 @@ public class BasketService {
 
     }
 
+
+
+
+    int a = 1;
+    char b = '1';
     public UserBasket getUserBasket() {
         Map<UUID, Integer> product = products.getProducts();
         List<BasketItem> basketItems = product.entrySet().stream()

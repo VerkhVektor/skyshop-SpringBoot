@@ -34,7 +34,7 @@ public class StorageService {
 
     }
 
-    private HashMap<UUID, Product> addProduct() {
+    public HashMap<UUID, Product> addProduct() {
         HashMap<UUID, Product> products = new HashMap<>();
         Product product1 = new SimpleProduct("Телефон", 60000);
         Product product2 = new DiscountedProduct("Ноутбук", 50000, 20);
